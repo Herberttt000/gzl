@@ -1,0 +1,22 @@
+<?php
+//ini_set('display_errors',1);            //错误信息
+//ini_set('display_startup_errors',1);    //php启动错误信息
+//error_reporting(-1);                    //打印出所有的 错误信息
+//ini_set('max_execution_time', '0');
+//set_time_limit(0);
+$con = mysql_connect("localhost","username","password");
+if (!$con)
+  {
+  die('Could not connect: ' . mysql_error());
+  }
+
+// 一些代码...
+mysql_select_db('dbname',$con);
+mysql_query("set names utf8");
+session_start();
+//mysql_close($con);
+
+include dirname(__FILE__) . '/common.php';
+
+
+?>

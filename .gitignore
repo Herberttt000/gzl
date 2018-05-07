@@ -1,0 +1,19 @@
+# ide & editor
+.idea/
+
+# other project
+explorer
+ci
+
+# temp
+.swp
+
+# config
+config.php
+
+# web server
+.htaccess
+
+# binary
+*.xls
+*.xlsx
