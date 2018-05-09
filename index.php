@@ -1,25 +1,25 @@
 <?php
 include 'config.php';
 if(isset($_SESSION['rank'])) {
-	$rank  = $_SESSION['rank'];
+    $rank  = $_SESSION['rank'];
 }else{
-	$rank = 0;
+    $rank = 0;
 }
 ?>
 <?php
-	include './header.php';
+    include './header.php';
 ?>
 
-	<!-- Header -->
-	<header id="head">
-		<div class="container">
-			<div class="row">
-				<h1 class="lead">理论教学与实践教学工作量查询系统</h1>
-				<p class="tagline">哈尔滨理工大学</p>
-			</div>
-		</div>
-	</header>
-	<!-- /Header -->
+    <!-- Header -->
+    <header id="head">
+        <div class="container">
+            <div class="row">
+                <h1 class="lead">理论教学与实践教学工作量查询系统</h1>
+                <p class="tagline">哈尔滨理工大学</p>
+            </div>
+        </div>
+    </header>
+    <!-- /Header -->
 
 <?php include './footer.php'; ?>
 <script>

@@ -3,7 +3,7 @@
 	此页仅仅允许 rank == 1的用户修改访问
 */
 include 'config.php';
-if(isset($_SESSION['rank']) && $_SESSION['rank']==1 &&) {
+if(isset($_SESSION['rank']) && $_SESSION['rank']==1) {
 	$rank  = $_SESSION['rank'];
 }else{
 	$rank = 0;

@@ -420,7 +420,7 @@ if($_POST['op']=="lilun") {
             ".$_POST['xueqi'].",
             \"".$_POST['teacher_id']."\",
             \"".$_POST['teacher_name']."\",
-            \"".$_POST['teacher_id']."\",
+            \"".$_POST['teacher_zc']."\",
             \"".$_POST['shijian_name']."\",
             \"".$_POST['course_id']."\",
             \"".$_POST['shijian_type']."\",
@@ -576,7 +576,6 @@ if($_POST['op']=="lilun") {
 
 ?>
 <?php
-
-header("location: ./modify_lilun_per.php?teacher_id=".$_POST['teacher_id']."&xueqi=".$_POST['year']."");
+header("location: ./modify_lilun_per.php?teacher_id=".$_POST['teacher_id']."&xueqi=".$_POST['year']);
 exit();
 ?>
