@@ -15,7 +15,9 @@
         exit();
     }
 
-
+    $sql="SELECT DISTINCT xueyuan FROM teachers";
+    $result=mysql_query($sql);
+    $result1=mysql_query($sql);
 
 ?>
 <?php
@@ -29,6 +31,13 @@
 <div class="row">
         <form action="./output_all_handle.php" class="navbar-form navbar-left" method="post">
             <input type="text" name="year" class="form-control" placeholder="输入学期，如“20141”">
+            <select name="xueyuan" class="selectpicker form-control">
+                <?php
+                            while($xueqi_row = mysql_fetch_assoc($result)) {
+                                echo "<option value='".$xueqi_row['xueyuan']."' >".$xueqi_row['xueyuan']."</option>";
+                            }
+                ?>
+            </select>
 
             <span class="text-right"><button type="submit" class="btn btn-success">导出</button></span>
         </form>
@@ -40,6 +49,13 @@
 
        <form action="./output_all_handle_by_nian.php" class="navbar-form navbar-left" method="post">
             <input type="text" name="year" class="form-control" placeholder="输入年份，如“2014”">
+           <select name="xueyuan" class="selectpicker form-control">
+               <?php
+               while($xueqi_row1 = mysql_fetch_assoc($result1)) {
+                   echo "<option value='".$xueqi_row1['xueyuan']."' >".$xueqi_row1['xueyuan']."</option>";
+               }
+               ?>
+           </select>
 
             <span class="text-right"><button type="submit" class="btn btn-success">导出</button></span>
         </form>

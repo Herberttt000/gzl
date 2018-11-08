@@ -53,7 +53,12 @@
         }
     }
 
-    $sql = "SELECT DISTINCT `teacher_id` FROM `teachers`;";
+    if($_POST['xueyuan']!=null){
+        $sql = "SELECT DISTINCT `teacher_id` FROM `teachers`WHERE `xueyuan`='".$_POST['xueyuan']."';";
+    }else{
+        $sql = "SELECT DISTINCT `teacher_id` FROM `teachers`;";
+    }
+
     $teachers_result = mysql_query($sql);
     if(!$teachers_result) {
         die("SQL ERROR : ". mysql_error());
@@ -69,6 +74,7 @@
     require_once dirname(__FILE__) . './../include/Classes/PHPExcel.php';
     // 生成新的excel对象
     $objPHPExcel = new PHPExcel();
+//    var_dump($objPHPExcel);
     // 设置excel文档的属性
     $objPHPExcel->getProperties()->setCreator("Sam.c")->setLastModifiedBy("Sam.c Test")->setTitle("Microsoft Office Excel Document")->setSubject("Test")->setDescription("Test")->setKeywords("Test")->setCategory("Test result file");
     // 开始操作excel表

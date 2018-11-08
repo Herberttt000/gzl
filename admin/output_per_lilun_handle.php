@@ -21,6 +21,7 @@
 		exit();
 	}
 	//echo $_POST['year'];
+
 	$sql = "SELECT * FROM `lilun` WHERE `xueqi` LIKE \"".$_POST['year']."\"";
 	//echo $sql;
 	$result_ll = mysql_query($sql);
