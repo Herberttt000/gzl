@@ -68,8 +68,10 @@ function update_teacher($teacher_id, $xueqi){
 
 # 显示admin界面的左导航
 function show_left_nav(){
-	if($_SESSION['find_gzl'] || $_SESSION['modify_users'] || $_SESSION['modify_xitong']) {
+	if($_SESSION['find_gzl'] || $_SESSION['modify_users'] || $_SESSION['modify_xitong'] || $_SESSION['add_gzl']) {
 		echo "<div class=\"list-group\">";
+        if($_SESSION['add_gzl'])
+            echo "    <a class=\"list-group-item\" href=\"./admin_add_teacher_works.php\">添加工作量(实践)</a>";
        	if($_SESSION['find_gzl'])
         	echo "    <a class=\"list-group-item\" href=\"./admin_search_teacher_works.php\">查询工作量</a>";
        	if($_SESSION['modify_users'])
@@ -153,6 +155,11 @@ function show_left_nav(){
         	echo "<a class=\"list-group-item\" href=\"./output_per.php\">导出全校个人明细表格</a>";
         echo "</div>";
         //print_r($_SESSION['export_geren']);
+	}
+	if($_SESSION['summary']){
+		echo "<div class=\"list-group\">";
+			echo "<a class=\"list-group-item\" href=\"./summary.php\">统计</a>";
+		echo "</div>";
 	}
 }
 

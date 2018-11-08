@@ -35,8 +35,10 @@ if($rs['password']==md5($_POST['password'])) {
     $_SESSION['calc_shijian'] = $rs['calc_shijian'];
     $_SESSION['calc_tiyu'] = $rs['calc_tiyu'];
     $_SESSION['find_gzl'] = $rs['find_gzl'];
+    $_SESSION['add_gzl'] = $rs['add_gzl'];
     $_SESSION['modify_users'] = $rs['modify_users'];
     $_SESSION['modify_xitong'] = $rs['modify_xitong'];
+    $_SESSION['summary']=$rs['summary'];
 
 
     header("location: ./index.php");
